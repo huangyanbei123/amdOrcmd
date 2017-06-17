@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="./sea.js"></script>
+</head>
+<body>
+<script>
+seajs.config({
+  base: "../sea-modules/",
+  alias: {
+    "jquery": "jquery/jquery/1.10.1/jquery.js"
+  }
+})
+seajs.use("../static/hello/src/main")
+</script>
+<script>
+ require(['a',"b" ,'notAmd', 'd'], function(a, b, notAmd,d) {
+     console.log(a.say());           // should be: a call: this is b
+     console.log(notAmd());       // should be: c, not amd module
+     console.log(d.say());           // should be: d call: this is b
+  });
+</script>
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body
+</html>
